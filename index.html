@@ -968,8 +968,8 @@ render();
    2) Host this file on your own site (Netlify, Vercel, GitHub Pages). It will not send from a claude.ai artifact link.
    3) Add ?notrack=1 to the URL once on your own devices to exclude your own visits. */
 var AAJ_TRACK={
-  provider:"none",                       /* "none" | "posthog" | "ga4" | "plausible" */
-  posthogKey:"",  posthogHost:"https://us.i.posthog.com",   /* PostHog project API key; use https://eu.i.posthog.com for EU */
+  provider:"posthog",                       /* "none" | "posthog" | "ga4" | "plausible" */
+  posthogKey:"phc_pAzwEpVzmXXFge3inEPFUvKDiufBw8A2qm7MR35AZiza",  posthogHost:"https://us.i.posthog.com",   /* PostHog project API key; use https://eu.i.posthog.com for EU */
   ga4Id:"",                              /* e.g. G-XXXXXXXXXX */
   plausibleDomain:""                     /* e.g. aaj.example.com */
 };
