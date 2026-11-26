@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFF9EE">
-<meta name="description" content="Aaj: daily Hindu Panchang, puja, vrat, festivals and devotional guidance.">
+<title>Aaj | सनातन परंपरा, हर दिन आपके साथ</title>
+<meta name="description" content="Aaj is a daily Hindu devotional platform that brings Panchang, festivals, puja, mantras, stories and Sanatan traditions together in one simple place.">
 <meta name="color-scheme" content="light dark">
-<title>Aaj | Panchang, Puja, Vrat and Daily Guidance</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap">
 <style>
 :root{--bg:#FFF9EE;--bg2:#FCEFD3;--sf:#FFFFFF;--ink:#2B1B3D;--mu:#6E5F7D;--a:#C2410C;--a2:#F59E0B;--b:#7C3AED;--ln:#EBDDC2;--btn:#F5B82E;--btnt:#2B1B3D;--red:#DC2626;--grn:#16A34A;
@@ -210,10 +210,21 @@ button,select,input{touch-action:manipulation}
 img,svg,video,canvas{max-width:100%}
 
 </style>
+<style>
+nav a{padding:7px 9px}
+.skt{font:600 1.3rem/1.95 "Tiro Devanagari Hindi",Georgia,serif;color:var(--a);margin:12px 0 4px;white-space:pre-line}
+.mnote{font-size:.92rem}
+.tag{display:inline-block;font:600 .72rem Hind,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--a);background:var(--bg2);border:1px solid var(--ln);border-radius:99px;padding:2px 10px;margin-bottom:6px}
+.story summary{display:block}.story summary::after{display:none}
+.stitle{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.story p{white-space:normal}
+.mt0{font-size:.82rem;color:var(--mu);margin-top:6px}
+.les{border-left:4px solid var(--a2);padding:4px 12px;margin:14px 0 4px;color:var(--ink)}
+</style>
 </head>
 <body>
 <header><div class="w"><a class="logo" href="#top">आज</a>
-<nav><a href="#pan" data-i="n1"></a><a href="#horo" data-i="n2"></a><a href="#muh" data-i="n3"></a><a href="#kun" data-i="n4"></a><a href="#puja" data-i="n6"></a></nav>
+<nav><a href="#pan" data-i="n1"></a><a href="#horo" data-i="n2"></a><a href="#muh" data-i="n3"></a><a href="#kun" data-i="n4"></a><a href="#puja" data-i="n6"></a><a href="#mantra"></a><a href="#stories"></a></nav>
 <button class="btn o lang" id="lang" aria-label="Switch language">हिं / EN</button></div></header>
 <main id="top">
 
@@ -284,6 +295,14 @@ img,svg,video,canvas{max-width:100%}
 </div>
 <div class="card" id="obs" style="margin-top:18px"><h3 data-i="obh"></h3><p class="note" data-i="obn"></p><label for="ekprofile" data-i="ekprof" style="display:block;margin:8px 0 4px">Ekadashi tradition</label><select id="ekprofile" style="width:100%;padding:10px;border:1px solid var(--ln);border-radius:10px;background:var(--sf);color:var(--ink)"><option value="smarta" data-i="eksm">Smarta basic sunrise rule (edge cases provisional)</option><option value="vaishnava" data-i="ekvai">Vaishnava / ISKCON-style Arunodaya rule (provisional)</option></select><div id="obl" style="margin-top:8px"></div></div></div></section>
 
+<section id="mantra"><div class="w">
+<p class="eye" id="meye"></p><h2 id="mh2"></h2><p class="lead" id="ml"></p>
+<div class="stack" id="mlist"></div></div></section>
+
+<section id="stories" class="alt"><div class="w">
+<p class="eye" id="seye"></p><h2 id="sh2"></h2><p class="lead" id="sl"></p>
+<div class="stack" id="slist"></div></div></section>
+
 <section id="daily"><div class="w">
 <p class="eye" data-i="eye5"></p><h2 data-i="h5"></h2><p class="lead" data-i="p5"></p>
 <div class="feature-grid">
@@ -309,7 +328,7 @@ img,svg,video,canvas{max-width:100%}
         <h3>Information you enter</h3>
         <p>City selection and language preference are saved in your browser's local storage so the site can remember these settings on your device. If you use the Kundli tool, the birth details you enter are used by the browser to calculate and display the result. The current version does not intentionally send those birth details to an Aaj server or save them as an Aaj account record. Avoid using a shared device if you do not want others with access to that browser to see information you have entered during a session.</p>
         <h3>Third-party services</h3>
-        <p>The site loads font files from Google Fonts. Your browser may connect to Google to retrieve those fonts, and Google may receive technical information such as your IP address and browser request data under its own privacy terms. The current version does not include an Aaj analytics account, advertising tracker, payment processor or login service.</p>
+        <p>The site loads font files from Google Fonts. Your browser may connect to Google to retrieve those fonts, and Google may receive technical information such as your IP address and browser request data under its own privacy terms. <span id="pvAn">The current version does not include an Aaj analytics account, advertising tracker, payment processor or login service.</span></p>
         <h3>Storage and your choices</h3>
         <p>Browser local storage remains on your device until you clear this site's data or your browser removes it. You can clear Aaj's site data through your browser settings. If you block external font requests, the site will use available system fonts instead.</p>
         <h3>Changes and questions</h3>
@@ -319,6 +338,8 @@ img,svg,video,canvas{max-width:100%}
         <h2>Disclaimer</h2>
         <p>Aaj provides Panchang, tithi, vrat, festival, muhurta and devotional information for general educational and personal reference. It is not a substitute for guidance from a qualified priest, astrologer or other relevant religious authority.</p>
         <p>Panchang timings and observances can vary with the selected city, local sunrise and sunset, calculation methods, regional calendars, sampradaya, and family or temple traditions. Festival dates and Parana windows may therefore differ between trusted regional sources. Where a result is marked approximate, candidate or requiring review, do not treat it as a definitive instruction.</p>
+        <p>Panchang values, muhurat rankings and kundli outputs in this beta are calculated with approximate models and have not yet been independently verified against reference ephemerides. They may differ slightly from printed almanacs.</p>
+        <p>Mantras and stories are retold in simple words for general understanding. Versions vary between texts, regions and traditions, and mantra pronunciation is best learned from an elder or teacher.</p>
         <p>Please verify important vrat, festival, puja and muhurta decisions with a trusted local Panchang or religious authority. Aaj makes no guarantee that every calculation or observance will be suitable for every location or tradition.</p>
       </section>
       <section class="legal-card" id="contact">
@@ -599,8 +620,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 <script>var SITE=location.protocol.indexOf("http")==0?location.host+location.pathname:"Aaj";
 var L="en";try{L=localStorage.getItem("aajL")||"en"}catch(e){}
 var I={n1:["Panchang","पंचांग"],n2:["Rashifal","राशिफल"],n3:["Muhurat","मुहूर्त"],n4:["Kundli","कुंडली"],
-eye1:["YOUR DAILY FAITH COMPANION","आपकी रोज़मर्रा की धार्मिक साथी"],h1:["Faith and tradition, made simple.","आस्था और परंपरा, सरल भाषा में।"],
-p1:["Check the day’s Panchang, understand vrat and festivals, and follow simple puja guides. Made for everyday Indian households.","आज का पंचांग जानें, व्रत-त्योहार समझें और पूजा की सरल विधि पढ़ें। हर भारतीय परिवार के लिए उपयोगी जानकारी।"],
+eye1:["A DAILY HINDU DEVOTIONAL PLATFORM","दैनिक हिंदू भक्ति मंच"],h1:["Sanatan tradition, with you every day.","सनातन परंपरा, हर दिन आपके साथ।"],
+p1:["Aaj is a daily Hindu devotional platform that brings Panchang, festivals, puja, mantras, stories and Sanatan traditions together in one simple place.","आज एक दैनिक हिंदू भक्ति मंच है, जो पंचांग, पर्व-त्योहार, पूजा, मंत्र, कथाएँ और सनातन परंपराएँ एक ही सरल जगह पर लाता है।"],
 n5:["Daily guidance","दैनिक मार्गदर्शन"],n6:["Puja guides","पूजा विधि"],
 eye5:["MORE THAN A HOROSCOPE","सिर्फ राशिफल से बढ़कर"],h5:["Small daily rituals. Clear explanations.","रोज़ के छोटे नियम। आसान जानकारी।"],p5:["Aaj brings common religious practices and traditions together, without assuming every family follows them in the same way.","आज आम धार्मिक परंपराओं और रीति-रिवाज़ों की जानकारी एक जगह लाता है। हर परिवार की परंपरा अलग हो सकती है।"],
 f1t:["Today’s Panchang","आज का पंचांग"],f1p:["Understand tithi, nakshatra, sunrise, sunset and commonly observed time periods for your selected city.","चुने हुए शहर के अनुसार तिथि, नक्षत्र, सूर्योदय, सूर्यास्त और दिन के पारंपरिक समय जानें।"],
@@ -635,7 +656,7 @@ rep:["Your Aaj report","आपकी आज रिपोर्ट"],lag:["Lagna 
 l1:["Career and education","करियर और शिक्षा"],l2:["Love and marriage","प्रेम और विवाह"],l3:["Next 12 months","अगले 12 महीने"],buy:["Get full report · ₹49","पूरी रिपोर्ट पाएँ · ₹49"],nopay:["Payments are not live in this prototype yet.","इस प्रोटोटाइप में भुगतान अभी चालू नहीं है।"],
 mood:["Mood","मनोदशा"],luck:["Lucky #","शुभ अंक"],colr:["Colour","रंग"],moon:["Today’s Moon","आज का चंद्र"]};
 var CT=[["Jaipur","जयपुर",26.91,75.79],["Delhi","दिल्ली",28.61,77.21],["Mumbai","मुंबई",19.08,72.88],["Bengaluru","बेंगलुरु",12.97,77.59],["Kolkata","कोलकाता",22.57,88.36],["Chennai","चेन्नई",13.08,80.27],["Hyderabad","हैदराबाद",17.39,78.49],["Pune","पुणे",18.52,73.86],["Ahmedabad","अहमदाबाद",23.02,72.57],["Lucknow","लखनऊ",26.85,80.95],["Patna","पटना",25.59,85.14],["Bhopal","भोपाल",23.26,77.41],["Chandigarh","चंडीगढ़",30.73,76.78],["Indore","इंदौर",22.72,75.86],["Jodhpur","जोधपुर",26.24,73.02],["Udaipur","उदयपुर",24.59,73.71],
-["Agra","आगरा",27.18,78.01],["Ajmer","अजमेर",26.45,74.64],["Amritsar","अमृतसर",31.63,74.87],["Bhubaneswar","भुवनेश्वर",20.30,85.82],["Bikaner","बीकानेर",28.02,73.31],["Coimbatore","कोयंबटूर",11.02,76.96],["Dehradun","देहरादून",30.32,78.03],["Guwahati","गुवाहाटी",26.14,91.74],["Gwalior","ग्वालियर",26.22,78.18],["Haridwar","हरिद्वार",29.95,78.16],["Jabalpur","जबलपुर",23.18,79.99],["Kanpur","कानपुर",26.45,80.35],["Kochi","कोच्चि",9.93,76.27],["Kota","कोटा",25.18,75.84],["Madurai","मदुरै",9.93,78.12],["Mathura","मथुरा",27.49,77.67],["Mysuru","मैसूरु",12.30,76.64],["Nagpur","नागपुर",21.15,79.09],["Nashik","नाशिक",19.99,73.79],["Raipur","रायपुर",21.25,81.63],["Rajkot","राजकोट",22.30,70.80],["Ranchi","राँची",23.34,85.31],["Shimla","शिमला",31.10,77.17],["Srinagar","श्रीनगर",34.08,74.80],["Surat","सूरत",21.17,72.83],["Thiruvananthapuram","तिरुवनंतपुरम",8.52,76.94],["Ujjain","उज्जैन",23.18,75.78],["Vadodara","वडोदरा",22.31,73.18],["Varanasi","वाराणसी",25.32,83.01],["Visakhapatnam","विशाखापत्तनम",17.69,83.22]];
+["Agra","आगरा",27.18,78.01],["Ajmer","अजमेर",26.45,74.64],["Amritsar","अमृतसर",31.63,74.87],["Bhubaneswar","भुवनेश्वर",20.30,85.82],["Bikaner","बीकानेर",28.02,73.31],["Coimbatore","कोयंबटूर",11.02,76.96],["Dehradun","देहरादून",30.32,78.03],["Gaya","गया",24.79,85.00],["Guwahati","गुवाहाटी",26.14,91.74],["Gwalior","ग्वालियर",26.22,78.18],["Haridwar","हरिद्वार",29.95,78.16],["Jabalpur","जबलपुर",23.18,79.99],["Kanpur","कानपुर",26.45,80.35],["Kochi","कोच्चि",9.93,76.27],["Kota","कोटा",25.18,75.84],["Madurai","मदुरै",9.93,78.12],["Mathura","मथुरा",27.49,77.67],["Mysuru","मैसूरु",12.30,76.64],["Nagpur","नागपुर",21.15,79.09],["Nashik","नाशिक",19.99,73.79],["Raipur","रायपुर",21.25,81.63],["Rajkot","राजकोट",22.30,70.80],["Ranchi","राँची",23.34,85.31],["Shimla","शिमला",31.10,77.17],["Srinagar","श्रीनगर",34.08,74.80],["Surat","सूरत",21.17,72.83],["Thiruvananthapuram","तिरुवनंतपुरम",8.52,76.94],["Ujjain","उज्जैन",23.18,75.78],["Vadodara","वडोदरा",22.31,73.18],["Varanasi","वाराणसी",25.32,83.01],["Visakhapatnam","विशाखापत्तनम",17.69,83.22]];
 var YG=[["Vishkambha","विष्कम्भ"],["Priti","प्रीति"],["Ayushman","आयुष्मान"],["Saubhagya","सौभाग्य"],["Shobhana","शोभन"],["Atiganda","अतिगण्ड"],["Sukarma","सुकर्मा"],["Dhriti","धृति"],["Shoola","शूल"],["Ganda","गण्ड"],["Vriddhi","वृद्धि"],["Dhruva","ध्रुव"],["Vyaghata","व्याघात"],["Harshana","हर्षण"],["Vajra","वज्र"],["Siddhi","सिद्धि"],["Vyatipata","व्यतीपात"],["Variyana","वरीयान"],["Parigha","परिघ"],["Shiva","शिव"],["Siddha","सिद्ध"],["Sadhya","साध्य"],["Shubha","शुभ"],["Shukla","शुक्ल"],["Brahma","ब्रह्म"],["Indra","इन्द्र"],["Vaidhriti","वैधृति"]];
 var KN=[["Kimstughna","किंस्तुघ्न"],["Bava","बव"],["Balava","बालव"],["Kaulava","कौलव"],["Taitila","तैतिल"],["Gara","गर"],["Vanija","वणिज"],["Vishti (Bhadra)","विष्टि (भद्रा)"],["Shakuni","शकुनि"],["Chatushpada","चतुष्पद"],["Naga","नाग"]];
 var MN=[["Jan","जन॰"],["Feb","फ़र॰"],["Mar","मार्च"],["Apr","अप्रैल"],["May","मई"],["Jun","जून"],["Jul","जुल॰"],["Aug","अग॰"],["Sep","सित॰"],["Oct","अक्टू॰"],["Nov","नव॰"],["Dec","दिस॰"]];
@@ -903,12 +924,111 @@ function obs(){var c=CT[$("city").value||0];CUR=c;var from=ist(0),profile=$("ekp
 $("ekprofile").onchange=function(){obs()};
 /* ===== init ===== */
 function tr(){document.documentElement.lang=L;document.querySelectorAll("[data-i]").forEach(function(e){e.textContent=I[e.dataset.i][L=="hi"?1:0]});
-fill("city",CT,ln);fill("bp",CT,ln);if(tr.first){tr.first=0;try{var sc=localStorage.getItem("aajC");if(sc!==null&&CT[+sc])$("city").value=sc}catch(e){}}fill("act",AC,ln);fill("s1",SG,function(s){return s[2]+" "+ln(s)});fill("s2",SG,function(s){return s[2]+" "+ln(s)});
+fill("city",CT,ln);fill("bp",CT,ln);if(tr.first){tr.first=0;try{var sc=localStorage.getItem("aajC"),ix=CT.findIndex(function(c){return c[0]===sc});if(ix>=0)$("city").value=ix}catch(e){}}fill("act",AC,ln);fill("s1",SG,function(s){return s[2]+" "+ln(s)});fill("s2",SG,function(s){return s[2]+" "+ln(s)});
 $("signs").innerHTML="";SG.forEach(function(s,i){var b=document.createElement("button");b.setAttribute("aria-pressed",i==sel);b.innerHTML="<b>"+s[2]+"</b>"+ln(s);b.onclick=function(){sel=i;[].forEach.call($("signs").children,function(c,j){c.setAttribute("aria-pressed",j===i)});horo()};$("signs").appendChild(b)});
 panchang();$("mres").innerHTML="";$("cres").innerHTML="";$("kout").innerHTML=""}
 $("lang").onclick=function(){L=L=="hi"?"en":"hi";try{localStorage.setItem("aajL",L)}catch(e){}tr()};
-$("city").onchange=function(){try{localStorage.setItem("aajC",$("city").value)}catch(e){}panchang()};$("mgo").onclick=muh;$("cgo").onclick=mat;$("kgo").onclick=kun;
+$("city").onchange=function(){try{localStorage.setItem("aajC",CT[+$("city").value][0])}catch(e){}panchang()};$("mgo").onclick=muh;$("cgo").onclick=mat;$("kgo").onclick=kun;
 tr.first=1;tr();
+</script>
+<script>
+/* Mantras and stories: small curated starter set, rendered from data so it follows the language switch */
+(function(){
+var D={"M": [["gayatri", "Gayatri Mantra", "गायत्री मंत्र", "ॐ भूर्भुवः स्वः ।\nतत्सवितुर्वरेण्यं ।\nभर्गो देवस्य धीमहि ।\nधियो यो नः प्रचोदयात् ॥", "We meditate on the radiant light of the divine Sun, the giver of life. May it guide and awaken our understanding.", "हम जीवनदाता सूर्यदेव के उस तेजस्वी प्रकाश का ध्यान करते हैं। वह हमारी बुद्धि को सही मार्ग पर प्रेरित करे।", "Traditionally recited at sunrise and sunset. A prayer for clear thinking.", "परंपरा से सूर्योदय और सूर्यास्त के समय पढ़ा जाता है। यह सद्बुद्धि की प्रार्थना है।"], ["mahamrityunjaya", "Mahamrityunjaya Mantra", "महामृत्युंजय मंत्र", "ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।\nउर्वारुकमिव बन्धनान्मृत्योर्मुक्षीय मामृतात् ॥", "We worship the three-eyed Lord Shiva, who nourishes all. Like a ripe cucumber freed from its vine, may we be freed from the bonds of death and led toward immortality.", "हम त्रिनेत्रधारी भगवान शिव की आराधना करते हैं, जो सबका पोषण करते हैं। जैसे पका हुआ खीरा बेल से अलग हो जाता है, वैसे ही हमें मृत्यु के बंधन से मुक्त करें और अमरत्व की ओर ले चलें।", "Devotees recite it for protection, peace and strength in hard times.", "भक्त इसे सुरक्षा, शांति और कठिन समय में बल के लिए पढ़ते हैं।"], ["namah-shivaya", "Om Namah Shivaya", "ॐ नमः शिवाय", "ॐ नमः शिवाय ॥", "I bow to Shiva, the auspicious one.", "मैं कल्याणकारी भगवान शिव को नमन करता हूँ।", "Known as the five-syllable (panchakshara) mantra. Simple to chant on a mala.", "इसे पंचाक्षर मंत्र कहा जाता है। माला पर जपना सरल है।"], ["hare-krishna", "Hare Krishna Mahamantra", "हरे कृष्ण महामंत्र", "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ।\nहरे राम हरे राम राम राम हरे हरे ॥", "A call to the names of Krishna and Rama, asking for devotion and a peaceful heart.", "कृष्ण और राम, भगवान के इन नामों का स्मरण, भक्ति और शांत मन की प्रार्थना।", "Chanted aloud in kirtan or silently on a mala.", "कीर्तन में गाया जाता है या माला पर शांत मन से जपा जाता है।"], ["vasudevaya", "Om Namo Bhagavate Vasudevaya", "ॐ नमो भगवते वासुदेवाय", "ॐ नमो भगवते वासुदेवाय ॥", "I bow to Lord Vasudeva (Vishnu), who lives in all beings.", "मैं सबमें बसने वाले भगवान वासुदेव (विष्णु) को नमन करता हूँ।", "Often recited by devotees of Vishnu and Krishna, especially on Ekadashi.", "विष्णु और कृष्ण के भक्त इसे अक्सर पढ़ते हैं, विशेषकर एकादशी पर।"], ["hanuman", "Hanuman Mantra", "हनुमान मंत्र", "ॐ श्री हनुमते नमः ॥", "I bow to Lord Hanuman, the symbol of strength, courage and devotion.", "मैं बल, साहस और भक्ति के प्रतीक भगवान हनुमान को नमन करता हूँ।", "Commonly recited on Tuesdays and Saturdays.", "मंगलवार और शनिवार को प्रायः पढ़ा जाता है।"], ["ganesh-beej", "Ganesh Mantra", "गणेश मंत्र", "ॐ गं गणपतये नमः ॥", "I bow to Lord Ganesha. “Gam” is his seed (beej) sound.", "मैं भगवान गणेश को नमन करता हूँ। “गं” उनका बीज मंत्र है।", "Recited before starting anything new, to ask for a smooth beginning.", "कोई भी नया कार्य शुरू करने से पहले निर्विघ्न आरंभ के लिए पढ़ा जाता है।"], ["vakratunda", "Vakratunda Ganesh Shloka", "वक्रतुण्ड गणेश श्लोक", "वक्रतुण्ड महाकाय सूर्यकोटिसमप्रभ ।\nनिर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥", "O curved-trunked, mighty Ganesha, shining like a million suns, please remove all obstacles from my work, always.", "हे वक्रतुण्ड, विशाल देह वाले, करोड़ों सूर्यों के समान तेजस्वी गणेश, मेरे सभी कार्यों को सदा विघ्नरहित करें।", "A popular Ganesha prayer, often said before study or work.", "गणेश जी की लोकप्रिय प्रार्थना, अध्ययन या काम से पहले पढ़ी जाती है।"], ["durga", "Durga Stuti", "दुर्गा स्तुति", "या देवी सर्वभूतेषु शक्तिरूपेण संस्थिता ।\nनमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः ॥", "To the Goddess who lives in all beings as strength (Shakti), I bow again and again.", "जो देवी सब प्राणियों में शक्ति के रूप में विराजमान हैं, उन्हें बारंबार नमस्कार।", "From the Devi Mahatmya. Popular during Navratri.", "देवी माहात्म्य से। नवरात्रि में विशेष रूप से प्रचलित।"], ["saraswati", "Saraswati Prayer", "सरस्वती प्रार्थना", "सरस्वति नमस्तुभ्यं वरदे कामरूपिणि ।\nविद्यारम्भं करिष्यामि सिद्धिर्भवतु मे सदा ॥", "O Goddess Saraswati, giver of blessings, I bow to you. As I begin my studies, may I always succeed.", "हे वरदायिनी देवी सरस्वती, आपको नमस्कार। मैं विद्या का आरंभ करता हूँ, मुझे सदा सफलता मिले।", "A prayer for students, said before studying or exams.", "विद्यार्थियों की प्रार्थना, पढ़ाई या परीक्षा से पहले पढ़ी जाती है।"], ["guru", "Guru Shloka", "गुरु श्लोक", "गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः ।\nगुरुः साक्षात् परं ब्रह्म तस्मै श्रीगुरवे नमः ॥", "The teacher is like Brahma, Vishnu and Shiva, and truly the highest reality. I bow to that revered teacher.", "गुरु ब्रह्मा, विष्णु और महेश्वर के समान हैं, और साक्षात् परब्रह्म हैं। उन श्रीगुरु को नमस्कार।", "Recited to honour teachers, especially on Guru Purnima.", "शिक्षकों के सम्मान में, विशेषकर गुरु पूर्णिमा पर पढ़ा जाता है।"], ["shanti", "Shanti Mantra", "शांति मंत्र", "ॐ सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः ।\nसर्वे भद्राणि पश्यन्तु मा कश्चिद्दुःखभाग्भवेत् ॥\nॐ शान्तिः शान्तिः शान्तिः ॥", "May all be happy. May all be free from illness. May all see good. May no one suffer. Om, peace, peace, peace.", "सब सुखी हों, सब रोगमुक्त हों, सब शुभ देखें, कोई दुःख न पाए। ॐ शांति, शांति, शांति।", "A prayer for everyone, a gentle way to end the day.", "सबके कल्याण की प्रार्थना, दिन के अंत में पढ़ने का सुंदर तरीका।"], ["surya", "Surya Mantra", "सूर्य मंत्र", "ॐ सूर्याय नमः ॥", "I bow to Surya, the Sun, the source of light and energy.", "मैं प्रकाश और ऊर्जा के स्रोत सूर्यदेव को नमन करता हूँ।", "Often said while offering water to the Sun in the morning.", "सुबह सूर्य को जल अर्पित करते समय अक्सर पढ़ा जाता है।"], ["ram", "Shri Ram Jaap", "श्री राम जाप", "श्री राम जय राम जय जय राम ॥", "Glory to Lord Rama.", "भगवान श्रीराम की जय हो।", "A simple chant, often sung in groups or counted on a mala.", "सरल जाप, जो सामूहिक रूप से या माला पर किया जाता है।"]], "S": [["shabari", "Ramayana", "रामायण", "Shabari and the Berries", "शबरी और बेर", "While searching for Sita, Rama and Lakshmana reached the forest hut of Shabari, an elderly woman who had waited many years for Rama’s visit. Her teacher had told her that Rama would one day come, and every day she swept the path and gathered fruit for him.\n\nWhen Rama finally arrived, Shabari was overjoyed. She had collected wild berries and, wanting only the sweetest for her guest, she tasted each one first and kept the best. Lakshmana was shocked to see Rama accept berries she had already tasted. But Rama ate them with love. He saw not the tasted fruit but the devotion in her heart.\n\nShabari then guided them toward Sugriva and Hanuman, who would help them find Sita. Her long wait was over.\n\nThe story is retold in many versions, and details differ between traditions.", "सीता की खोज में निकले राम और लक्ष्मण वन में शबरी की कुटिया पहुँचे। शबरी बूढ़ी थीं और बरसों से राम के आने की प्रतीक्षा कर रही थीं। उनके गुरु ने कहा था कि एक दिन राम स्वयं आएँगे, और तब से वे रोज़ रास्ता बुहारतीं और उनके लिए फल इकट्ठा करतीं।\n\nजब राम आए तो शबरी की खुशी का ठिकाना न रहा। वे जंगली बेर लाई थीं और अपने अतिथि को केवल मीठे बेर देना चाहती थीं, इसलिए हर बेर चखकर सबसे मीठे अलग रखती गईं। लक्ष्मण यह देखकर चकित हुए, पर राम ने प्रेम से वे बेर खाए। उन्होंने चखे हुए फल नहीं, शबरी का भक्ति से भरा हृदय देखा।\n\nइसके बाद शबरी ने उन्हें सुग्रीव और हनुमान की ओर जाने का मार्ग बताया, जो सीता की खोज में सहायक बने। उनकी लंबी प्रतीक्षा पूरी हुई।\n\nयह कथा कई रूपों में सुनाई जाती है और परंपराओं के अनुसार विवरण बदल जाते हैं।", "God values sincere love more than perfect offerings.", "ईश्वर को दिखावे से अधिक सच्चा प्रेम प्रिय है।"], ["arjuna-eye", "Mahabharata", "महाभारत", "Arjuna and the Bird’s Eye", "अर्जुन और चिड़िया की आँख", "Guru Drona once tested his students, the Pandava and Kaurava princes, in archery. He hung a wooden bird on a tree and asked each prince to aim at its eye.\n\nBefore each turn, Drona asked, “What do you see?” Yudhishthira said he saw the tree, the branches, the bird and Drona himself. Drona asked him to step aside. Others gave similar answers and were also sent away.\n\nWhen Arjuna’s turn came, Drona asked the same question. Arjuna replied that he saw only the eye of the bird. Not the tree, not the bird’s body, not even his teacher. Drona was pleased and told him to shoot. The arrow struck the eye.\n\nThe story is told to show how deep focus leads to mastery. It is a popular retelling from the Mahabharata, and details vary between versions.", "गुरु द्रोणाचार्य ने एक बार पांडव और कौरव राजकुमारों की धनुर्विद्या की परीक्षा ली। उन्होंने पेड़ पर एक लकड़ी की चिड़िया टाँग दी और हर राजकुमार से उसकी आँख पर निशाना लगाने को कहा।\n\nहर बार तीर चलाने से पहले द्रोण पूछते, “तुम्हें क्या दिख रहा है?” युधिष्ठिर ने कहा कि उन्हें पेड़, डालियाँ, चिड़िया और स्वयं गुरुदेव दिख रहे हैं। द्रोण ने उन्हें हटने को कहा। दूसरों के उत्तर भी ऐसे ही थे और उन्हें भी हटा दिया गया।\n\nजब अर्जुन की बारी आई तो द्रोण ने वही प्रश्न पूछा। अर्जुन ने कहा कि उन्हें केवल चिड़िया की आँख दिख रही है, न पेड़, न चिड़िया का शरीर, यहाँ तक कि गुरुदेव भी नहीं। द्रोण प्रसन्न हुए और तीर चलाने को कहा। तीर सीधे आँख पर लगा।\n\nयह कथा बताती है कि गहरा ध्यान लक्ष्य तक पहुँचाता है। यह महाभारत की लोकप्रिय कथाओं में है और अलग-अलग संस्करणों में विवरण भिन्न हो सकते हैं।", "Focus on one goal at a time.", "एक समय में एक ही लक्ष्य पर ध्यान लगाएँ।"], ["neelkanth", "Lord Shiva", "भगवान शिव", "Shiva Becomes Neelkanth", "शिव बने नीलकंठ", "In ancient times, the devas and asuras churned the ocean of milk to obtain amrit, the nectar of immortality. They used Mount Mandara as the churning rod and the serpent Vasuki as the rope.\n\nBefore the nectar appeared, a terrible poison called halahala rose from the ocean. Its fumes began to burn the world, and gods and demons alike ran in fear.\n\nThey prayed to Lord Shiva. Out of compassion, Shiva took the poison in his hand and drank it to save all beings. Goddess Parvati held his throat so the poison would not go down into his body. It stayed there, and his throat turned blue.\n\nFrom then on, Shiva is called Neelkanth, the blue-throated one.\n\nThe churning then continued, and amrit and other treasures emerged. Versions of the story vary across the Puranas.", "प्राचीन काल में देवताओं और असुरों ने अमृत पाने के लिए क्षीरसागर का मंथन किया। मंदराचल पर्वत मथानी बना और वासुकि नाग रस्सी।\n\nअमृत निकलने से पहले समुद्र से हलाहल नामक भयंकर विष निकला। उसकी तपन से सारी सृष्टि जलने लगी और देवता-असुर सभी भयभीत होकर भागे।\n\nसबने भगवान शिव की शरण ली। करुणा से भरकर शिव ने सभी प्राणियों की रक्षा के लिए वह विष पी लिया। माता पार्वती ने उनका कंठ थाम लिया ताकि विष भीतर न उतरे। विष कंठ में ही रुक गया और उनका कंठ नीला पड़ गया।\n\nतभी से शिव नीलकंठ कहलाते हैं।\n\nइसके बाद मंथन फिर चला और अमृत तथा अन्य रत्न निकले। पुराणों में कथा के रूप अलग-अलग मिलते हैं।", "True strength is taking on difficulty for the good of others.", "सच्ची शक्ति दूसरों की भलाई के लिए कष्ट उठाना है।"], ["govardhan", "Lord Krishna", "भगवान कृष्ण", "Krishna Lifts Govardhan", "कृष्ण ने उठाया गोवर्धन", "In Vrindavan, the villagers used to worship Indra, the king of the gods, every year so that he would send rain. Young Krishna asked why. He said the mountain Govardhan gave their cows grass and the land gave them food, so they should thank the mountain and their cattle.\n\nThe villagers agreed and worshipped Govardhan instead. Angry, Indra sent heavy rain and storms that flooded Vrindavan for days.\n\nFrightened, the villagers came to Krishna. He lifted Govardhan mountain on the little finger of his left hand like an umbrella, and people and animals took shelter under it. After seven days Indra’s pride broke. He stopped the rain and bowed to Krishna.\n\nThis is remembered on Govardhan Puja, the day after Diwali in many places.\n\nIt is told in the Bhagavata Purana and in folk traditions, with small differences.", "वृंदावन के लोग हर साल वर्षा के लिए देवराज इंद्र की पूजा करते थे। बालक कृष्ण ने पूछा कि ऐसा क्यों। उन्होंने समझाया कि गोवर्धन पर्वत हमारी गायों को चारा देता है और धरती हमें अन्न, इसलिए हमें पर्वत और अपने पशुओं का आभार मानना चाहिए।\n\nगाँववालों ने मान लिया और गोवर्धन की पूजा की। इससे क्रोधित होकर इंद्र ने भारी वर्षा और आँधी भेजी, जिससे कई दिनों तक वृंदावन में बाढ़ आ गई।\n\nडरे हुए गाँववाले कृष्ण के पास आए। कृष्ण ने गोवर्धन पर्वत को बाएँ हाथ की छोटी उँगली पर छतरी की तरह उठा लिया और सब लोगों व पशुओं ने उसके नीचे शरण ली। सात दिन बाद इंद्र का अहंकार टूट गया। उसने वर्षा रोक दी और कृष्ण को प्रणाम किया।\n\nइसी की स्मृति में कई जगह दिवाली के अगले दिन गोवर्धन पूजा होती है।\n\nयह कथा भागवत पुराण और लोक परंपराओं में थोड़े अंतर के साथ मिलती है।", "Be grateful to nature, and do not let pride take over.", "प्रकृति के प्रति कृतज्ञ रहें और अहंकार को हावी न होने दें।"], ["ganesha-race", "Lord Ganesha", "भगवान गणेश", "Ganesha and the Race Around the World", "गणेश और संसार की परिक्रमा", "Shiva and Parvati’s sons, Ganesha and Kartikeya, once argued over who should be married first. To settle it, their parents set a contest: whoever circled the whole world three times first would win.\n\nKartikeya set off at once on his peacock, flying across mountains and seas. Ganesha, whose vehicle is a small mouse, thought for a moment. Then he walked calmly around his parents, Shiva and Parvati, three times and bowed.\n\nWhen asked why, Ganesha said that his parents were his whole world. Shiva and Parvati were delighted by his wisdom and declared him the winner.\n\nThis is one of the most loved stories about Ganesha, honoured as the god of wisdom and new beginnings. Retellings differ from region to region.", "शिव और पार्वती के पुत्र गणेश और कार्तिकेय में एक बार विवाद हुआ कि पहले किसका विवाह हो। निर्णय के लिए माता-पिता ने एक प्रतियोगिता रखी: जो पूरी पृथ्वी की तीन परिक्रमा पहले करके आएगा वही विजयी होगा।\n\nकार्तिकेय तुरंत अपने मोर पर बैठकर पर्वतों और समुद्रों के पार उड़ चले। गणेश का वाहन छोटा-सा मूषक है। उन्होंने क्षण भर सोचा, फिर शांति से माता-पिता शिव-पार्वती की तीन परिक्रमा की और प्रणाम किया।\n\nपूछने पर गणेश ने कहा कि मेरे लिए माता-पिता ही पूरा संसार हैं। उनकी बुद्धिमानी से शिव-पार्वती प्रसन्न हुए और गणेश को विजेता घोषित किया।\n\nयह गणेश जी की सबसे प्रिय कथाओं में से एक है। गणेश बुद्धि और शुभ आरंभ के देवता माने जाते हैं। अलग-अलग क्षेत्रों में कथा के रूप भिन्न मिलते हैं।", "Wisdom often beats speed.", "बुद्धि अक्सर गति से आगे निकल जाती है।"], ["holika-prahlad", "Festival story: Holi", "पर्व कथा: होली", "Prahlad and Holika", "प्रह्लाद और होलिका", "Hiranyakashipu, a powerful king, believed he was greater than the gods and ordered everyone to worship only him. But his young son, Prahlad, was a devoted follower of Lord Vishnu and refused.\n\nThe king tried many ways to stop Prahlad, but nothing worked. Finally, he asked his sister Holika, who had a boon that fire could not burn her, to sit in a blazing fire with Prahlad on her lap.\n\nPrahlad prayed to Vishnu. Holika’s boon failed and she was burnt, while Prahlad came out unharmed.\n\nThis is why people light the Holika Dahan bonfire the night before Holi, as a symbol of faith winning over arrogance and evil. The next day is celebrated with colours.\n\nThe story comes from the Puranas, and local customs around Holi vary widely.", "हिरण्यकशिपु नाम का शक्तिशाली राजा स्वयं को देवताओं से बड़ा मानता था और सबको अपनी ही पूजा करने का आदेश देता था। पर उसका छोटा पुत्र प्रह्लाद भगवान विष्णु का भक्त था और उसने मना कर दिया।\n\nराजा ने प्रह्लाद को रोकने के कई उपाय किए, पर कोई सफल नहीं हुआ। अंत में उसने अपनी बहन होलिका को बुलाया, जिसे वरदान था कि अग्नि उसे जला नहीं सकती। उसे प्रह्लाद को गोद में लेकर जलती आग में बैठना था।\n\nप्रह्लाद ने विष्णु का स्मरण किया। होलिका का वरदान काम नहीं आया और वह जल गई, जबकि प्रह्लाद सुरक्षित बाहर आए।\n\nइसी की स्मृति में होली से एक रात पहले होलिका दहन होता है, जो आस्था की अहंकार और बुराई पर जीत का प्रतीक है। अगले दिन रंगों का उत्सव मनाया जाता है।\n\nयह कथा पुराणों में मिलती है और होली की स्थानीय परंपराएँ अलग-अलग हैं।", "Faith and goodness outlast arrogance.", "आस्था और भलाई अहंकार से अधिक टिकती है।"]], "H": {"mantra": ["Mantras", "मंत्र"], "mh": ["Daily mantras", "दैनिक मंत्र"], "ml": ["A small, curated set of commonly recited mantras with their meaning in simple words. Pronunciation and practice vary by tradition, so learn from an elder or teacher.", "सामान्यतः पढ़े जाने वाले चुने हुए मंत्र, सरल अर्थ सहित। उच्चारण और विधि परंपरा के अनुसार अलग हो सकती है, इसलिए किसी बड़े या गुरु से सीखें।"], "story": ["Stories", "कथाएँ"], "sh": ["Short sacred stories", "धार्मिक कथाएँ"], "sl": ["Short stories from the Ramayana, Mahabharata and the Puranas, retold in simple words. Versions differ across texts and regions.", "रामायण, महाभारत और पुराणों की छोटी कथाएँ, सरल भाषा में। ग्रंथों और क्षेत्रों के अनुसार रूप भिन्न हो सकते हैं।"], "share": ["Share card", "कार्ड शेयर करें"], "lesson": ["Lesson", "सीख"], "min": ["min read", "मिनट में पढ़ें"], "nm": ["Mantras", "मंत्र"], "ns": ["Stories", "कथाएँ"]}},M=D.M,S=D.S,H=D.H;
+function g(){return(typeof L!=="undefined"&&L==="hi")?1:0}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function openIds(box){var o={};[].forEach.call(document.querySelectorAll("#"+box+" details[open]"),function(d){o[d.dataset.id]=1});return o}
+function $(i){return document.getElementById(i)}
+var quiet=true;
+function render(){
+ quiet=true;setTimeout(function(){quiet=false},80);
+ var i=g(),om=openIds("mlist"),os=openIds("slist"),first=!render.done;render.done=1;
+ $("meye").textContent=H.mantra[i];$("mh2").textContent=H.mh[i];$("ml").textContent=H.ml[i];
+ $("seye").textContent=H.story[i];$("sh2").textContent=H.sh[i];$("sl").textContent=H.sl[i];
+ var a=document.querySelector('nav a[href="#mantra"]'),b=document.querySelector('nav a[href="#stories"]');
+ a.textContent=H.nm[i];b.textContent=H.ns[i];
+ $("mlist").innerHTML=M.map(function(m,k){var open=first?k===0:om[m[0]];
+  return '<details class="card guide" data-track="mantra" data-id="'+m[0]+'"'+(open?" open":"")+'><summary>'+esc(m[1+i])+'</summary><div class="skt">'+esc(m[3])+'</div><p>'+esc(m[4+i])+'</p><p class="mnote">'+esc(m[6+i])+'</p><button class="gh" data-sh="m'+k+'">'+H.share[i]+'</button></details>'}).join("");
+ $("slist").innerHTML=S.map(function(s,k){var body=s[5+i],mins=Math.max(1,Math.round(body.split(/\s+/).length/170)),open=os[s[0]];
+  return '<details class="card guide story" data-track="story" data-id="'+s[0]+'"'+(open?" open":"")+'><summary><span class="tag">'+esc(s[1+i])+'</span><div class="stitle"><span>'+esc(s[3+i])+'</span></div><div class="mt0">~'+mins+' '+H.min[i]+'</div></summary>'+
+  body.split("\n\n").map(function(p){return"<p>"+esc(p)+"</p>"}).join("")+'<div class="les"><b>'+H.lesson[i]+':</b> '+esc(s[7+i])+'</div><button class="gh" data-sh="s'+k+'">'+H.share[i]+'</button></details>'}).join("")}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-sh]");
+ if(b){var t=b.dataset.sh,i=g(),k=+t.slice(1);
+  if(t[0]==="m")mk(M[k][1+i],[M[k][3].replace(/\n/g," "),M[k][4+i]]);else mk(S[k][3+i],[S[k][7+i]]);
+  if(window.aajTrack)aajTrack("share_tapped",{source:t[0]==="m"?"mantra":"story"});return}
+ if(e.target.closest&&e.target.closest("#lang"))setTimeout(render,0)},true);
+document.addEventListener("toggle",function(e){var d=e.target;if(!quiet&&d&&d.open&&d.dataset&&d.dataset.track&&window.aajTrack)aajTrack(d.dataset.track+"_opened",{item:d.dataset.id})},true);
+render();
+})();
+</script>
+<script>
+/* ===== Aaj anonymous usage tracking =====
+   Sends only event names plus non-personal properties. Never sends birth date, time or place.
+   1) Set provider below to "posthog", "ga4" or "plausible" and fill in the key.
+   2) Host this file on your own site (Netlify, Vercel, GitHub Pages). It will not send from a claude.ai artifact link.
+   3) Add ?notrack=1 to the URL once on your own devices to exclude your own visits. */
+var AAJ_TRACK={
+  provider:"none",                       /* "none" | "posthog" | "ga4" | "plausible" */
+  posthogKey:"",  posthogHost:"https://us.i.posthog.com",   /* PostHog project API key; use https://eu.i.posthog.com for EU */
+  ga4Id:"",                              /* e.g. G-XXXXXXXXXX */
+  plausibleDomain:""                     /* e.g. aaj.example.com */
+};
+(function(){
+  var C=AAJ_TRACK,ls=function(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
+  if(/[?&]notrack=1/.test(location.search))ls("aajNoTrack","1");
+  var off=ls("aajNoTrack")==="1"||navigator.doNotTrack==="1"||C.provider==="none";
+  var today=new Date().toISOString().slice(0,10),id="",first=today,vn=1;
+  if(!off){
+    id=ls("aajId");if(!id){id="a"+Math.random().toString(36).slice(2)+Date.now().toString(36);ls("aajId",id)}
+    first=ls("aajFirst");if(!first){first=today;ls("aajFirst",first)}
+    vn=+(ls("aajVisits")||0);var last=ls("aajLastDay");if(last!==today){vn++;ls("aajVisits",String(vn));ls("aajLastDay",today)}
+  }
+  var dsf=Math.round((Date.parse(today)-Date.parse(first))/864e5);
+  function base(){return{visit_days:vn,days_since_first:dsf,lang:document.documentElement.lang||"en",returning:dsf>0?1:0}}
+  if(!off){
+    if(C.provider==="ga4"&&C.ga4Id){var g=document.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id="+C.ga4Id;document.head.appendChild(g);
+      window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",C.ga4Id,{send_page_view:false,user_id:id})}
+    if(C.provider==="plausible"&&C.plausibleDomain){var p=document.createElement("script");p.defer=true;p.setAttribute("data-domain",C.plausibleDomain);p.src="https://plausible.io/js/script.js";document.head.appendChild(p);
+      window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}}
+  }
+  function track(name,props){
+    if(off)return;var pr=Object.assign(base(),props||{});
+    try{
+      if(C.provider==="posthog"&&C.posthogKey)fetch(C.posthogHost+"/capture/",{method:"POST",keepalive:true,headers:{"Content-Type":"application/json"},body:JSON.stringify({api_key:C.posthogKey,event:name,distinct_id:id,properties:pr})});
+      else if(C.provider==="ga4"&&window.gtag)gtag("event",name,pr);
+      else if(C.provider==="plausible"&&window.plausible)plausible(name,{props:pr});
+    }catch(e){}
+  }
+  window.aajTrack=track;
+  track("app_open",{});
+  var $=function(i){return document.getElementById(i)};
+  document.addEventListener("click",function(e){
+    var t=e.target;if(!t||!t.closest)return;
+    var b=t.closest("button");if(!b)return;
+    if(b.closest("#signs")){track("sign_selected",{});return}
+    var m={lang:"language_switched",mgo:"muhurat_searched",cgo:"match_checked",kgo:"kundli_generated",buy:"report_cta_tapped",shp:"share_tapped",shh:"share_tapped",shm:"share_tapped",shc:"share_tapped",shk:"share_tapped",msh:"share_card_sent"};
+    var n=m[b.id];if(!n)return;
+    var pr={};
+    if(/^sh/.test(b.id))pr.source={shp:"panchang",shh:"horoscope",shm:"muhurat",shc:"match",shk:"kundli"}[b.id]||"card";
+    if(b.id==="mgo"&&$("act"))pr.activity=$("act").selectedIndex;
+    if(b.id==="lang")setTimeout(function(){track(n,{});},0);else track(n,pr);
+  },true);
+  /* which sections people actually scroll to */
+  if(typeof window.IntersectionObserver==="function"){var seen={},io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting&&!seen[en.target.id]){seen[en.target.id]=1;track("section_viewed",{section:en.target.id})}})},{threshold:.35});
+    document.querySelectorAll("main section[id]").forEach(function(s){io.observe(s)})}
+})();
+
+/* Keep the privacy policy truthful: describe analytics only when it is actually switched on */
+(function(){
+  var C=AAJ_TRACK,names={posthog:"PostHog",ga4:"Google Analytics",plausible:"Plausible"},on=C.provider!=="none"&&names[C.provider];
+  var sp=document.getElementById("pvAn");if(!sp||!on)return;
+  sp.textContent="The current version does not include an advertising tracker, payment processor or login service. It does use anonymous usage analytics, described under Usage analytics below.";
+  var anchor=[].filter.call(document.querySelectorAll("#privacy h3"),function(h){return/Storage and your choices/.test(h.textContent)})[0];if(!anchor)return;
+  var h=document.createElement("h3");h.textContent="Usage analytics";
+  var p=document.createElement("p");
+  p.textContent="This beta uses "+names[C.provider]+" to count anonymous usage events, such as which sections are opened, whether a device returns on another day, and whether a share button is tapped. Events are linked to a random identifier stored in your browser, not to your name or email. Birth details, birth place and anything you enter in the Kundli tool are never included. The provider may receive technical data such as your IP address. If your browser sends a Do Not Track signal, analytics is not used.";
+  anchor.parentNode.insertBefore(h,anchor);anchor.parentNode.insertBefore(p,anchor);
+})();
 </script>
 </body>
 </html>
